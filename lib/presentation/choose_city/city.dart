@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/presentation/weather_view/weather.dart';
 
 import '../../constants/constants.dart';
 
@@ -73,7 +74,14 @@ class _CityState extends State<City> {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (context) => const Weather(),
+                  ),
+                  (route) => false,
+                );
+              },
               child: const Text(
                 'Go to Weather',
               ),

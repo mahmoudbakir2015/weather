@@ -29,5 +29,6 @@ abstract class Constants {
     'Lisbon',
     'Moscow',
     'Riyadh',
+    'Madrid',
   }.toList();
 }
