@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../choose_city/choose_city.dart';
+
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -11,9 +13,14 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(
-      seconds: 5,
+      seconds: 3,
     )).then(
-      (value) => null,
+      (value) => Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) => const ChooseCity(),
+        ),
+        (route) => false,
+      ),
     );
     super.initState();
   }
