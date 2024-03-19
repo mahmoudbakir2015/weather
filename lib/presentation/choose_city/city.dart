@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-class ChooseCity extends StatefulWidget {
-  const ChooseCity({super.key});
+import '../../constants/constants.dart';
+
+class City extends StatefulWidget {
+  const City({super.key});
 
   @override
-  State<ChooseCity> createState() => _ChooseCityState();
+  State<City> createState() => _CityState();
 }
 
-class _ChooseCityState extends State<ChooseCity> {
-  List<String> country = <String>['One', 'Two', 'Three', 'Four'];
-  String dropdownValue = 'One';
+class _CityState extends State<City> {
+  String dropdownValue = Constants.capitalCountry.first;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +36,8 @@ class _ChooseCityState extends State<ChooseCity> {
                   height: 50,
                   width: double.infinity,
                   child: DropdownButton<String>(
+                    menuMaxHeight: 400,
+                    autofocus: true,
                     value: dropdownValue,
                     icon: const Icon(Icons.arrow_drop_down_rounded),
                     elevation: 16,
@@ -51,15 +54,15 @@ class _ChooseCityState extends State<ChooseCity> {
                         dropdownValue = value!;
                       });
                     },
-                    items:
-                        country.map<DropdownMenuItem<String>>((String value) {
+                    items: Constants.capitalCountry
+                        .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         alignment: Alignment.center,
                         value: value,
                         child: Text(
                           value,
                           style: const TextStyle(
-                            color: Colors.red,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
