@@ -1,4 +1,6 @@
 abstract class Constants {
+  static double paddingApp = 40;
+  static String splashImge = 'assets/images/splash.jpeg';
   static List<String> capitalCountry = <String>{
     'Cairo',
     'London',

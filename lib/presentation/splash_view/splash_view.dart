@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import '../choose_city/city.dart';
 
 class SplashView extends StatefulWidget {
@@ -27,14 +28,14 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Image(
               image: AssetImage(
-                'assets/images/splash.jpeg',
+                Constants.splashImge,
               ),
             ),
           )

@@ -77,7 +77,9 @@ class _CityState extends State<City> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
-                    builder: (context) => const Weather(),
+                    builder: (context) => Weather(
+                      city: dropdownValue,
+                    ),
                   ),
                   (route) => false,
                 );
