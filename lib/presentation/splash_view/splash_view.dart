@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/presentation/weather_view/weather.dart';
@@ -26,6 +24,7 @@ class _SplashViewState extends State<SplashView> {
           (value) => city = value!,
         );
         if (await CacheHelper.getData(key: 'city') != null) {
+          // ignore: use_build_context_synchronously
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (context) => Weather(
@@ -35,6 +34,7 @@ class _SplashViewState extends State<SplashView> {
             (route) => false,
           );
         } else {
+          // ignore: use_build_context_synchronously
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (context) => const City(),

@@ -4,13 +4,24 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+lib used in this app:
+-dio(API)
+-sharedPref
+-bloc
 
-A few resources to get you started if this is your first Flutter project:
+design:
+-bloc design
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+summery:
+-This application was created to search for weather in some countries, and in the future some countries will be added
+Of the results you will get
+Temperature in Fahrenheit, Celsius, wind speed, pressure, etc
+
+country:
+-egypt
+
+accounts:
+facebook:https://www.facebook.com/mahmoud.mahmoudbakir
+what'sApp:01017632363
+linkedIn:https://www.linkedin.com/in/mahmoud-bakir-357b50100/
