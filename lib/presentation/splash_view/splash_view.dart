@@ -55,7 +55,7 @@ class _SplashViewState extends State<SplashView> {
           Center(
             child: Image(
               image: AssetImage(
-                Assets.splashImge,
+                Assets.iconApp,
               ),
             ),
           )
