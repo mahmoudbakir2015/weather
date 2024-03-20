@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weather/helpers/cache_helper.dart';
+import 'package:weather/presentation/weather_view/weather.dart';
 
 import '../../constants/constants.dart';
 import '../choose_city/city.dart';
@@ -16,12 +18,22 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(
       seconds: 3,
     )).then(
-      (value) => Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => const City(),
-        ),
-        (route) => false,
-      ),
+      (value) => (CacheHelper.getData(key: 'city') == null ||
+              CacheHelper.getData(key: 'city') == '')
+          ? Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (context) => const City(),
+              ),
+              (route) => false,
+            )
+          : Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (context) => Weather(
+                  city: CacheHelper.getData(key: 'city').toString(),
+                ),
+              ),
+              (route) => false,
+            ),
     );
     super.initState();
   }

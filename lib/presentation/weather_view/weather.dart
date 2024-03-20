@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/helpers/dio_helper.dart';
 import 'package:weather/presentation/weather_view/items.dart';
 import '../../constants/constants.dart';
@@ -127,11 +128,15 @@ class _WeatherState extends State<Weather> {
                     height: 5,
                     color: Colors.deepPurpleAccent,
                   ),
-                  onChanged: (String? value) {
+                  onChanged: (String? value) async {
                     // This is called when the user selects an item.
                     setState(() {
                       widget.city = value!;
                     });
+                    await CacheHelper.saveData(
+                      value: value.toString(),
+                      key: 'city',
+                    );
                     Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
                         builder: (context) => Weather(

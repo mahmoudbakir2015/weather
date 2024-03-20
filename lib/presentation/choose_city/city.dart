@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather/presentation/weather_view/weather.dart';
 
 import '../../constants/constants.dart';
+import '../../helpers/cache_helper.dart';
 
 class City extends StatefulWidget {
   const City({super.key});
@@ -74,7 +75,11 @@ class _CityState extends State<City> {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                await CacheHelper.saveData(
+                  value: dropdownValue,
+                  key: 'city',
+                );
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                     builder: (context) => Weather(
