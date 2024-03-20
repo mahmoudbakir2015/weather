@@ -53,6 +53,7 @@ class DioHelper {
 
 class ErrorInterceptor extends Interceptor {
   @override
+  // ignore: deprecated_member_use
   Future onError(DioError err, ErrorInterceptorHandler handler) async {
     if (err.response?.statusCode == 401) {
       log("statusCode == 401");

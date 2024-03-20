@@ -80,6 +80,8 @@ class _CityState extends State<City> {
                   value: dropdownValue,
                   key: 'city',
                 );
+
+                // ignore: use_build_context_synchronously
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                     builder: (context) => Weather(

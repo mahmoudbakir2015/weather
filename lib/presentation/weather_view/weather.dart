@@ -137,6 +137,7 @@ class _WeatherState extends State<Weather> {
                       value: value.toString(),
                       key: 'city',
                     );
+                    // ignore: use_build_context_synchronously
                     Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
                         builder: (context) => Weather(
