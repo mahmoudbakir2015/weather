@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather/business_logic/cubit/app_cubit.dart';
+import 'package:weather/data/repository/app_repo.dart';
+import 'package:weather/data/web_service/app_service.dart';
 import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/helpers/dio_helper.dart';
 import 'package:weather/helpers/observer.dart';
@@ -22,7 +24,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppCubit(),
+      create: (context) => AppCubit(
+          appRepo: AppRepo(
+        appWebService: AppWebService(),
+      )),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashView(),

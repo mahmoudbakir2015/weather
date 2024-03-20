@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/presentation/weather_view/weather.dart';
@@ -13,27 +15,34 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  String city = '';
   @override
   void initState() {
     Future.delayed(const Duration(
       seconds: 3,
     )).then(
-      (value) => (CacheHelper.getData(key: 'city') == null ||
-              CacheHelper.getData(key: 'city') == '')
-          ? Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(
-                builder: (context) => const City(),
+      (value) async {
+        await CacheHelper.getData(key: 'city').then(
+          (value) => city = value!,
+        );
+        if (await CacheHelper.getData(key: 'city') != null) {
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (context) => Weather(
+                city: city,
               ),
-              (route) => false,
-            )
-          : Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(
-                builder: (context) => Weather(
-                  city: CacheHelper.getData(key: 'city').toString(),
-                ),
-              ),
-              (route) => false,
             ),
+            (route) => false,
+          );
+        } else {
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (context) => const City(),
+            ),
+            (route) => false,
+          );
+        }
+      },
     );
     super.initState();
   }

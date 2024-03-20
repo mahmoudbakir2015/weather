@@ -27,10 +27,10 @@ class Location {
   String? name;
   String? region;
   String? country;
-  double? lat;
-  double? lon;
+  dynamic lat;
+  dynamic lon;
   String? tzId;
-  int? localtimeEpoch;
+  dynamic localtimeEpoch;
   String? localtime;
 
   Location(
@@ -69,29 +69,29 @@ class Location {
 }
 
 class Current {
-  int? lastUpdatedEpoch;
+  dynamic lastUpdatedEpoch;
   String? lastUpdated;
-  int? tempC;
-  double? tempF;
+  dynamic tempC;
+  dynamic tempF;
   int? isDay;
   Condition? condition;
-  double? windMph;
-  double? windKph;
-  int? windDegree;
+  dynamic windMph;
+  dynamic windKph;
+  dynamic windDegree;
   String? windDir;
-  int? pressureMb;
-  double? pressureIn;
-  int? precipMm;
-  int? precipIn;
-  int? humidity;
+  dynamic pressureMb;
+  dynamic pressureIn;
+  dynamic precipMm;
+  dynamic precipIn;
+  dynamic humidity;
   int? cloud;
-  int? feelslikeC;
-  double? feelslikeF;
-  int? visKm;
-  int? visMiles;
-  int? uv;
-  double? gustMph;
-  int? gustKph;
+  dynamic feelslikeC;
+  dynamic feelslikeF;
+  dynamic visKm;
+  dynamic visMiles;
+  dynamic uv;
+  dynamic gustMph;
+  dynamic gustKph;
 
   Current({
     this.lastUpdatedEpoch,
@@ -181,7 +181,7 @@ class Current {
 class Condition {
   String? text;
   String? icon;
-  int? code;
+  dynamic code;
 
   Condition({this.text, this.icon, this.code});
 

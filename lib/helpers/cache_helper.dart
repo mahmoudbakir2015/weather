@@ -16,10 +16,10 @@ class CacheHelper {
     );
   }
 
-  static dynamic getData({
+  static Future<String?> getData({
     required String key,
   }) async {
-    return sharedPreferences?.get(
+    return sharedPreferences?.getString(
       key,
     );
   }
