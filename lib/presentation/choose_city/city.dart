@@ -33,44 +33,42 @@ class _CityState extends State<City> {
               ),
             ),
             Center(
-              child: Expanded(
-                child: SizedBox(
-                  height: 50,
-                  width: double.infinity,
-                  child: DropdownButton<String>(
-                    menuMaxHeight: 400,
-                    autofocus: true,
-                    value: dropdownValue,
-                    icon: const Icon(Icons.arrow_drop_down_rounded),
-                    elevation: 16,
-                    alignment: Alignment.center,
-                    isExpanded: true,
-                    style: const TextStyle(color: Colors.deepPurple),
-                    underline: Container(
-                      height: 5,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                    onChanged: (String? value) {
-                      // This is called when the user selects an item.
-                      setState(() {
-                        dropdownValue = value!;
-                      });
-                    },
-                    items: Constants.capitalCountry
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        alignment: Alignment.center,
-                        value: value,
-                        child: Text(
-                          value,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        ),
-                      );
-                    }).toList(),
+              child: SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: DropdownButton<String>(
+                  menuMaxHeight: 400,
+                  autofocus: true,
+                  value: dropdownValue,
+                  icon: const Icon(Icons.arrow_drop_down_rounded),
+                  elevation: 16,
+                  alignment: Alignment.center,
+                  isExpanded: true,
+                  style: const TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 5,
+                    color: Colors.deepPurpleAccent,
                   ),
+                  onChanged: (String? value) {
+                    // This is called when the user selects an item.
+                    setState(() {
+                      dropdownValue = value!;
+                    });
+                  },
+                  items: Constants.capitalCountry
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      alignment: Alignment.center,
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                    );
+                  }).toList(),
                 ),
               ),
             ),
