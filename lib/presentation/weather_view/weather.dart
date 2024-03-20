@@ -110,6 +110,9 @@ class _WeatherState extends State<Weather> {
                       height: 50,
                       width: double.infinity,
                       child: DropdownButton<String>(
+                        onTap: () {},
+                        borderRadius:
+                            BorderRadius.circular(Constants.paddingApp),
                         menuMaxHeight: 400,
                         autofocus: true,
                         value: widget.city,
@@ -144,6 +147,7 @@ class _WeatherState extends State<Weather> {
                         items: Constants.capitalCountry
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
+                            enabled: true,
                             alignment: Alignment.center,
                             value: value,
                             child: Text(
