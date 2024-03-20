@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:weather/helpers/cache_helper.dart';
+import 'package:weather/helpers/dio_helper.dart';
 import 'package:weather/presentation/splash_view/splash_view.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  await DioHelper.init();
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
