@@ -4,6 +4,7 @@ import 'package:weather/business_logic/cubit/app_cubit.dart';
 import 'package:weather/business_logic/cubit/app_states.dart';
 import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/presentation/weather_view/items.dart';
+import '../../constants/assets.dart';
 import '../../constants/constants.dart';
 
 // ignore: must_be_immutable
@@ -75,12 +76,12 @@ class _WeatherState extends State<Weather> {
                       children: [
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.windKph}',
-                          image: Constants.wind,
+                          image: Assets.wind,
                           name: 'Wind Speed',
                         ),
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.pressureIn}',
-                          image: Constants.pressure,
+                          image: Assets.pressure,
                           name: 'Pressure',
                         ),
                       ],
@@ -92,12 +93,12 @@ class _WeatherState extends State<Weather> {
                       children: [
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.humidity}',
-                          image: Constants.humidity,
+                          image: Assets.humidity,
                           name: 'Humidity',
                         ),
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.tempF}',
-                          image: Constants.temp,
+                          image: Assets.temp,
                           name: 'Temp in Fahrnhit',
                         ),
                       ],

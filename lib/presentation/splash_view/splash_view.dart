@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather/helpers/cache_helper.dart';
 import 'package:weather/presentation/weather_view/weather.dart';
-
-import '../../constants/constants.dart';
+import '../../constants/assets.dart';
 import '../choose_city/city.dart';
 
 class SplashView extends StatefulWidget {
@@ -56,7 +55,7 @@ class _SplashViewState extends State<SplashView> {
           Center(
             child: Image(
               image: AssetImage(
-                Constants.splashImge,
+                Assets.splashImge,
               ),
             ),
           )
