@@ -8,6 +8,8 @@ Padding buildBoldText({
       bottom: 10,
     ),
     child: Text(
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       text,
       style: const TextStyle(
         fontWeight: FontWeight.bold,
@@ -44,6 +46,8 @@ Text buildLightText({
   required String text,
 }) {
   return Text(
+    maxLines: 1,
+    overflow: TextOverflow.ellipsis,
     text,
     style: const TextStyle(
       color: Colors.blue,

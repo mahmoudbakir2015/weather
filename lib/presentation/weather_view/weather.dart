@@ -73,6 +73,7 @@ class _WeatherState extends State<Weather> {
                       text: 'Additional Information',
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.windKph}',
@@ -90,6 +91,7 @@ class _WeatherState extends State<Weather> {
                       height: Constants.paddingApp,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         buildAdditInfo(
                           degree: '${state.weatherModel.current?.humidity}',
