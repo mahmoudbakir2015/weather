@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         appWebService: AppWebService(),
       )),
       child: const MaterialApp(
+        title: 'WeatherApp',
         debugShowCheckedModeBanner: false,
         home: SplashView(),
       ),
