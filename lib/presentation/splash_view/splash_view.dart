@@ -13,7 +13,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  String city = '';
+  String? city = '';
   @override
   void initState() {
     Future.delayed(const Duration(
@@ -21,14 +21,14 @@ class _SplashViewState extends State<SplashView> {
     )).then(
       (value) async {
         await CacheHelper.getData(key: 'city').then(
-          (value) => city = value!,
+          (value) => city = value,
         );
         if (await CacheHelper.getData(key: 'city') != null) {
           // ignore: use_build_context_synchronously
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (context) => Weather(
-                city: city,
+                city: city!,
               ),
             ),
             (route) => false,
